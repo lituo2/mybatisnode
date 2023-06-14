@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.BrandMapper">
+
+    <!--<sql id="brand_colum">
+        from tb_brand;
+    </sql>-->
+    <resultMap id="brandresultMap" type="brand">
+        <result column="brand_name" property="brandname"></result>
+        <result column="company_name" property="companyname"></result>
+    </resultMap>
+
+    <select id="selectAll" resultMap="brandresultMap">
+        select * from tb_brand;
+        <!--<include refid="brand_colum"></include>-->
+    </select>
+    <select id="selectById" resultMap="brandresultMap">
+        select * from tb_brand where id
+        <!--<![CDATA[
+        <
+        ]]>-->
+        <!--&lt;-->
+        =
+        #{id};
+    </select>
+    <select id="selectByCondition" resultMap="brandresultMap">
+        select * from tb_brand where statu = #{statu} and company_name = #{companyname} and brand_name = #{brandname};
+    </select>
+    <select id="selectByCondition2" resultType="brand">
+        select * from tb_brand where statu = #{statu} and company_name = #{companyname} and brand_name = #{brandname};
+    </select>
+    <select id="selectByCondition3" resultType="brand">
+        select * from tb_brand where statu = #{k1} and company_name = #{k2} and brand_name = #{k3};
+    </select>
+    <select id="selectByCondition4" resultMap="brandresultMap">
+        select * from tb_brand
+        <where>
+            <if test="statu != null">
+                statu = #{statu}
+            </if>
+            <if test="companyname != null and companyname != '' ">
+                and company_name = #{companyname}
+            </if>
+            <if test="brandname != null and brandname != ''">
+                and brand_name = #{brandname}
+            </if>
+        </where>
+    </select>
+    <select id="selectByConditionsingle" resultMap="brandresultMap">
+        select * from tb_brand
+        where
+        <choose>
+            <when test="statu != null">
+                statu = #{statu}
+            </when>
+            <when test="companyname != null and companyname != ''">
+                company_name = #{companyname}
+            </when>
+            <when test="brandname != null and brandname != ''">
+                brand_name = #{brandname}
+            </when>
+            <otherwise>
+                1=1
+            </otherwise>
+        </choose>
+    </select>
+
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
+        insert into tb_brand(brand_name,company_name,ordered,description,statu)
+        values(#{brandname},#{companyname},#{ordered},#{description},#{statu})
+    </insert>
+
+    <update id="updateAll2">
+        update tb_brand
+        <set>
+            <if test="brandname != null and brandname != ''">
+                brand_name = #{brandname}
+            </if>
+            <if test="companyname != null and companyname != ''">
+                company_name = #{companyname}
+            </if>
+            <if test="ordered != null">
+                ordered = #{ordered}
+            </if>
+            <if test="description != null and description != ''">
+                description = #{description}
+            </if>
+            <if test="statu != null">
+                statu = #{statu}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteById">
+        delete from tb_brand where id = #{id}
+    </delete>
+    <delete id="deleteByIds">
+        delete from tb_brand where id
+        in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+
+</mapper>

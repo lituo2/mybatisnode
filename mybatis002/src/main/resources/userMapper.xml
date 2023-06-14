@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="aaa2">
+
+    <select id="selectCar2" resultType="com.powernodemubatis.domain.Car">
+        select * from t_car
+    </select>
+
+</mapper>

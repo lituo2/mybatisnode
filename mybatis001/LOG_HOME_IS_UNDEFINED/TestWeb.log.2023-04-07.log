@@ -1,0 +1,17 @@
+2023-04-07 14:28:43.812 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-04-07 14:32:11.547 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-04-07 14:32:11.552 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-04-07 14:32:11.571 [main] DEBUG o.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-04-07 14:32:11.572 [main] DEBUG o.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-04-07 14:32:11.572 [main] DEBUG o.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-04-07 14:32:11.572 [main] DEBUG o.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-04-07 14:32:11.666 [main] DEBUG org.apache.ibatis.transaction.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-04-07 14:32:11.904 [main] DEBUG o.apache.ibatis.datasource.pooled.PooledDataSource - Created connection 239372207.
+2023-04-07 14:32:11.904 [main] DEBUG org.apache.ibatis.transaction.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@e4487af]
+2023-04-07 14:32:11.909 [main] DEBUG fdsafdsa.insertCar - ==>  Preparing: insert into t_car(id,car_num,brand,guide_price,produce_time,car_type) values(null,'1012','gq',70.0,'2003-10-11','燃油车')
+2023-04-07 14:32:11.962 [main] DEBUG fdsafdsa.insertCar - ==> Parameters: 
+2023-04-07 14:32:11.966 [main] DEBUG fdsafdsa.insertCar - <==    Updates: 1
+2023-04-07 14:32:11.968 [main] DEBUG org.apache.ibatis.transaction.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@e4487af]
+2023-04-07 14:32:11.969 [main] DEBUG org.apache.ibatis.transaction.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@e4487af]
+2023-04-07 14:32:11.969 [main] DEBUG org.apache.ibatis.transaction.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@e4487af]
+2023-04-07 14:32:11.969 [main] DEBUG o.apache.ibatis.datasource.pooled.PooledDataSource - Returned connection 239372207 to pool.
